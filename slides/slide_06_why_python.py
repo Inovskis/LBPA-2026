@@ -3,41 +3,39 @@ from components.navigation import slide_header
 
 
 def render():
-    slide_header("Kāpēc Python?", "Inženieru izvēle Nr. 1")
+    slide_header("Kāpēc Python", "Ne tāpēc ka modīgi — tāpēc ka praktiski")
 
     col1, col2 = st.columns(2)
 
     with col1:
         st.markdown("""
-        ### Bezmaksas un atvērts
-        - Nav licences maksu
-        - Liela kopiena (>10M izstrādātāju)
+        <p class="slide-text">
+        Python nav vienīgā iespēja. Bet tas ir valoda, kurā inženieru formulas
+        izskatās kā formulas — nevis kā programmēšana.
+        </p>
 
-        ### Bagāta bibliotēku ekosistēma
-        - 500,000+ pakotnes PyPI
-        - Specializētas inženieru bibliotēkas
+        <p class="slide-text">
+        Bibliotēku ekosistēma ir tāda, ka daudz ko nevajag rakstīt no nulles.
+        Kāds jau ir implementējis EC2 formulas. Kāds jau ir uztaisījis FEM risinātāju.
+        Mūsu darbs ir salikt kopā.
+        </p>
 
-        ### Lasāms kods
-        - Kods lasa kā formula
-        - Viegli auditējams
-        """)
+        <p class="slide-text" style="color:#7f8c8d;">
+        Nav licences maksu. Nav vendor lock-in. Kods ir tavs.
+        </p>
+        """, unsafe_allow_html=True)
 
     with col2:
-        st.markdown("### EC2 formula Python kodā:")
         st.code("""
-# EC2 §6.2.2 — Bīdes izturība bez šķērsstiegrojuma
+# EC2 §6.2.2 — bīdes izturība
 import math
 
 k = min(1 + math.sqrt(200 / d), 2.0)
 rho_l = min(As / (b * d), 0.02)
 
-v_Rd_c = (0.18 / gamma_c) * k * (100 * rho_l * fck) ** (1/3) * b * d
+v_Rd_c = (0.18 / gamma_c) \\
+       * k * (100 * rho_l * fck) ** (1/3) \\
+       * b * d
 
-# Rezultāts uzreiz saprotams!
+# Lasāms. Izsekojams. Pārbaudāms.
         """, language="python")
-
-        st.markdown("""
-        <div class="accent-box">
-            Kods = Dokumentācija = Aprēķins
-        </div>
-        """, unsafe_allow_html=True)

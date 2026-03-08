@@ -11,64 +11,43 @@ except ImportError:
 
 
 def render():
-    slide_header("Kopsavilkums")
+    slide_header("Noslēgums")
 
-    c1, c2, c3 = st.columns(3)
+    st.markdown("""
+    <p class="slide-text">
+    Šī nav prezentācija par to, ka AI atrisinās visas problēmas.
+    Tā ir par to, ka rīki ir mainījušies — un mēs varam izvēlēties,
+    kā tos lietot.
+    </p>
 
-    with c1:
-        st.markdown("""
-        <div class="stat-card" style="text-align:center; min-height:200px;">
-            <p style="font-size:2.5rem;">&#128013;</p>
-            <h4 style="color:#00BCD4;">Python</h4>
-            <p class="slide-text">Spēcīgs bezmaksas rīks inženieriem ar validētām bibliotēkām</p>
-        </div>
-        """, unsafe_allow_html=True)
+    <p class="slide-text">
+    Skepse ir veselīga. Inženierija ir konservatīva disciplīna, un tam ir iemesls —
+    mēs projektējam lietas, uz kurām stāv cilvēki. Bet konservatīvisms nenozīmē
+    stagnāciju. Tas nozīmē — eksperimentēt apdomīgi.
+    </p>
 
-    with c2:
-        st.markdown("""
-        <div class="stat-card" style="text-align:center; min-height:200px;">
-            <p style="font-size:2.5rem;">&#129302;</p>
-            <h4 style="color:#00BCD4;">AI</h4>
-            <p class="slide-text">Paātrina izstrādi ~5x, bet vienmēr jāverificē rezultāts</p>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with c3:
-        st.markdown("""
-        <div class="stat-card" style="text-align:center; min-height:200px;">
-            <p style="font-size:2.5rem;">&#128640;</p>
-            <h4 style="color:#00BCD4;">Jaunā Ēra</h4>
-            <p class="slide-text">Katrs indivīds var radīt profesionālus rīkus</p>
-        </div>
-        """, unsafe_allow_html=True)
+    <p class="slide-text">
+    Ja kaut kas no šodienas stāstītā licis aizdomāties — tas ir pietiekami.
+    </p>
+    """, unsafe_allow_html=True)
 
     st.markdown("<br>", unsafe_allow_html=True)
 
-    col1, col2 = st.columns([2, 1])
+    col1, col2 = st.columns([3, 1])
 
     with col1:
         st.markdown("""
         <div class="accent-box">
-            <h3 style="margin-top:0;">Izmēģini pats!</h3>
-            <p style="font-size:1.4rem;">
-                <strong>design.kforma.lv</strong><br>
-                Bezmaksas reģistrācija &bull; 31 aprēķinu modulis
-            </p>
-            <p style="font-size:1rem; margin-bottom:0;">
-                nauris@kforma.lv
-            </p>
+            <strong>design.kforma.lv</strong> — atvērta platforma būvkonstrukciju aprēķiniem.<br>
+            <span style="color:#7f8c8d;">nauris@kforma.lv</span>
         </div>
         """, unsafe_allow_html=True)
-
-        st.markdown("### Jautājumi?")
 
     with col2:
         if HAS_QRCODE:
             qr = qrcode.make("https://design.kforma.lv")
             buf = BytesIO()
             qr.save(buf, format="PNG")
-            st.image(buf.getvalue(), caption="design.kforma.lv", width=200)
-        else:
-            st.info("QR kods: design.kforma.lv")
+            st.image(buf.getvalue(), caption="design.kforma.lv", width=160)
 
-    show_image("kforma_logo.png", width=150)
+    show_image("kforma_logo.png", width=120)

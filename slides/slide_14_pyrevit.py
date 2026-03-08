@@ -3,42 +3,38 @@ from components.navigation import slide_header
 
 
 def render():
-    slide_header("PyRevit", "Revit Add-ins ar Python")
+    slide_header("PyRevit", "Python Revit vidē — bez Visual Studio")
 
     col1, col2 = st.columns(2)
 
     with col1:
         st.markdown("""
-        ### Kas ir PyRevit?
-        - **Bezmaksas** open-source Revit add-in
-        - Python skripti — **bez Visual Studio**
-        - Automatizē atkārtojošos uzdevumus
-        - Pilna Revit API pieejamība
+        <p class="slide-text">
+        <strong>PyRevit</strong> ir bezmaksas Revit add-in, kas ļauj rakstīt
+        automatizācijas skriptus Python valodā. Nav nepieciešams Visual Studio,
+        nav nepieciešams C#.
+        </p>
 
-        ### Piemēri
-        - Batch šķērsgriezumu maiņa
-        - Automātiska stiegrojuma marķēšana
-        - Excel &rarr; Revit datu imports
-        - Parametru masu atjaunināšana
-        """)
+        <p class="slide-text">
+        Piemēri, ko var automatizēt:
+        </p>
 
-        c1, c2 = st.columns(2)
-        with c1:
-            st.markdown("""
-            <div class="compare-old" style="padding:0.8rem;">
-                <p style="margin:0;"><strong>C# Add-in:</strong><br>Visual Studio, .NET, kompilēšana</p>
-            </div>
-            """, unsafe_allow_html=True)
-        with c2:
-            st.markdown("""
-            <div class="compare-new" style="padding:0.8rem;">
-                <p style="margin:0;"><strong>PyRevit:</strong><br>Teksta redaktors + Python</p>
-            </div>
-            """, unsafe_allow_html=True)
+        <ul class="slide-text">
+            <li>Elementu datu eksports uz Excel</li>
+            <li>Parametru masu atjaunināšana</li>
+            <li>Šķērsgriezumu batch maiņa</li>
+            <li>Stiegrojuma marķēšana</li>
+        </ul>
+
+        <p class="slide-text" style="color:#7f8c8d;">
+        Barjera ir daudz zemāka nekā tradicionālajiem C# add-in.
+        Pietiek ar teksta redaktoru un pamata Python zināšanām.
+        </p>
+        """, unsafe_allow_html=True)
 
     with col2:
         st.code("""
-# PyRevit skripts — eksportē elementu datus
+# PyRevit — eksportē siju datus
 from pyrevit import revit, DB
 
 doc = revit.doc
@@ -53,9 +49,9 @@ for beam in beams:
     ).AsString()
     length = beam.get_Parameter(
         DB.BuiltInParameter.INSTANCE_LENGTH
-    ).AsDouble() * 304.8  # feet to mm
+    ).AsDouble() * 304.8  # feet > mm
 
     print(f"{mark}: {length:.0f} mm")
         """, language="python")
 
-        st.caption("docs.pyrevitlabs.io")
+        st.markdown('<p style="color:#7f8c8d; font-size:0.9rem;">docs.pyrevitlabs.io</p>', unsafe_allow_html=True)

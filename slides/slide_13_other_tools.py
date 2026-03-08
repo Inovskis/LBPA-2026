@@ -3,7 +3,14 @@ from components.navigation import slide_header
 
 
 def render():
-    slide_header("Citi Labi Rīki", "Ekosistēma inženieriem")
+    slide_header("Citi rīki", "Es neesmu vienīgais — šī ir ekosistēma")
+
+    st.markdown("""
+    <p class="slide-text">
+    Arvien vairāk platformu un rīku parādās tieši inženieriem.
+    Šeit daži, ko esmu novērojis.
+    </p>
+    """, unsafe_allow_html=True)
 
     tab1, tab2, tab3, tab4 = st.tabs([
         "Viktor.AI",
@@ -14,47 +21,36 @@ def render():
 
     with tab1:
         st.markdown("""
-        ### Viktor.AI — Low-Code Inženieru Platforma
-        - Veido web apps ar dažām Python rindām
-        - Integrējas ar SAP2000, ETABS, Excel
-        - 2026 roadmap: AI agents + automatizētas darbplūsmas
-        - **viktor.ai**
-        """)
+        <p class="slide-text">
+        <strong>Viktor.AI</strong> — platforma, kurā inženieri veido web aplikācijas
+        ar Python. Integrējas ar SAP2000, ETABS. Nesen pievienoti AI aģenti.
+        </p>
+        <p style="color:#7f8c8d;">viktor.ai</p>
+        """, unsafe_allow_html=True)
 
     with tab2:
         st.markdown("""
-        ### CalcTree — Cloud Aprēķinu Platforma
-        - Python & MathJS dzinējs
-        - Integrējas ar Excel, Grasshopper, ETABS
-        - Investīcijas no Foundamental VC
-        - Lietotāji: Arup, Jacobs, WSP
-        - **calctree.com**
-        """)
+        <p class="slide-text">
+        <strong>CalcTree</strong> — mākoņa aprēķinu platforma ar Python un MathJS dzinēju.
+        Integrējas ar Excel un Grasshopper. Lietotāji: Arup, Jacobs, WSP.
+        </p>
+        <p style="color:#7f8c8d;">calctree.com</p>
+        """, unsafe_allow_html=True)
 
     with tab3:
         st.markdown("""
-        ### Calcpad — Bezmaksas Open-Source
-        - Programmējams kalkulators inženieriem
-        - 100+ Eirokodeksu šablonu
-        - HTML atskaites ar formulām
-        - Nav nepieciešamas programmēšanas prasmes
-        - **calcpad.eu**
-        """)
+        <p class="slide-text">
+        <strong>Calcpad</strong> — bezmaksas open-source kalkulators ar 100+ Eirokodeksu
+        šabloniem. Ģenerē HTML atskaites. Nav nepieciešamas programmēšanas prasmes.
+        </p>
+        <p style="color:#7f8c8d;">calcpad.eu</p>
+        """, unsafe_allow_html=True)
 
     with tab4:
         st.markdown("""
-        ### GPAI — AI STEM Solver
-        - Foto/PDF &rarr; risinājums ar vizualizāciju
-        - Triple-verified (vairāki AI modeļi)
-        - Soli-pa-solim skaidrojumi
-        - **gpai.app**
-        """)
-
-        st.markdown("### Piemērs — vienkāršs prompts:")
-        st.code("""
-Prompt: "Calculate the bending capacity of a
-        300x600mm RC beam, C30/37, 4x25 bottom"
-
-GPAI: Provides step-by-step EC2 solution with
-      diagrams and verification
-        """, language="text")
+        <p class="slide-text">
+        <strong>GPAI</strong> — AI risinātājs STEM uzdevumiem. Nofotografē uzdevumu,
+        saņem soli-pa-solim risinājumu. Pārbauda ar vairākiem AI modeļiem.
+        </p>
+        <p style="color:#7f8c8d;">gpai.app</p>
+        """, unsafe_allow_html=True)

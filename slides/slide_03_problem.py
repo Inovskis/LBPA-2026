@@ -4,25 +4,30 @@ from components.media import show_image
 
 
 def render():
-    slide_header("Problēma", "Tradicionālo rīku ierobežojumi")
+    slide_header("Ikdienas realitāte", "Rīki, ar kuriem strādājam")
 
     col1, col2 = st.columns([3, 2])
 
     with col1:
         st.markdown("""
-        <div class="stat-card">
-            <h4 style="color:#ef5350;">Excel</h4>
-            <p class="slide-text">Grūti izsekot formulas &bull; Nav versiju kontroles &bull; Kļūdas kopējot</p>
-        </div>
-        <div class="stat-card">
-            <h4 style="color:#ef5350;">MathCAD</h4>
-            <p class="slide-text">Dārga licence &bull; Ierobežotas vizualizācijas &bull; Nav web pieejamības</p>
-        </div>
-        <div class="stat-card">
-            <h4 style="color:#ef5350;">Komerciālā programmatūra</h4>
-            <p class="slide-text">"Black box" aprēķini &bull; Augsta cena &bull; Nav pielāgojama</p>
-        </div>
+        <p class="slide-text">
+        Lielākā daļa inženieru-konstruktoru ikdienā izmanto kombināciju no Excel,
+        specializētas programmatūras un savstarpēji nesaistītiem rīkiem. Tas darbojas —
+        un tam ir savi iemesli.
+        </p>
+
+        <p class="slide-text">
+        Bet ir lietas, kas atkārtojas. Formulas, kuras kopējam no vienas darba
+        lapas uz citu. Aprēķini, kurus pārbaudām manuāli. Rezultāti, kurus
+        pārformatējam atskaitēm. Šīs rutīnas patērē laiku, ko varētu veltīt
+        inženiertehniskajiem lēmumiem.
+        </p>
+
+        <p class="slide-text">
+        Jautājums nav par to, vai esošie rīki ir slikti. Tie nav.
+        Jautājums ir — <strong>vai mēs varam atbrīvot laiku būtiskajam?</strong>
+        </p>
         """, unsafe_allow_html=True)
 
     with col2:
-        show_image("btf_screenshot.jpg", caption="BTF Digital — tipisks komerciāls rīks")
+        show_image("btf_screenshot.jpg", caption="Tipisks aprēķinu rīks")

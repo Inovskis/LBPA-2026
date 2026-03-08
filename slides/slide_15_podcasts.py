@@ -3,35 +3,40 @@ from components.navigation import slide_header
 
 
 def render():
-    slide_header("Podkāsti un Resursi", "Kur mācīties tālāk")
+    slide_header("Resursi", "Kur iesākt un ko klausīties")
 
     col1, col2 = st.columns(2)
 
     with col1:
         st.markdown("""
-        ### Flocode Podcast
-        **James O'Reilly** — Python + Inženierija
+        <p class="slide-text"><strong>Flocode Podcast</strong></p>
+        <p class="slide-text">
+        James O'Reilly vada podkāstu par Python inženierijā.
+        Sarunas ar cilvēkiem, kas veido šīs bibliotēkas un rīkus.
+        </p>
 
-        Ieteicamās epizodes:
-        - **#058** Morten Engen — *Structuralcodes* bibliotēka
-        - **#042** Craig Brinck — *PyNite* FEM analīze
-        - **#048** Connor Ferster — Automatizācija
-        - **#039** Dr. MZ Naser — ML konstrukcijās
+        <p class="slide-text">Ieteicamās epizodes:</p>
+        <ul class="slide-text">
+            <li>Morten Engen — <em>structuralcodes</em> bibliotēka</li>
+            <li>Craig Brinck — <em>PyNite</em> FEM</li>
+            <li>Connor Ferster — automatizācija</li>
+        </ul>
 
-        flocode.substack.com
-        """)
+        <p style="color:#7f8c8d;">flocode.substack.com</p>
+        """, unsafe_allow_html=True)
 
     with col2:
         st.markdown("""
-        ### Mācību Resursi
+        <p class="slide-text"><strong>Mācību resursi</strong></p>
 
-        | Resurss | Apraksts |
-        |---------|----------|
-        | **StructuralPython** | structuralpython.com |
-        | **EngineeringSkills** | engineeringskills.com |
-        | **civils.ai** | Python kurss inženieriem |
-        | **Udemy** | Programming for Structural Engineers |
+        | Resurss | Kas tas ir |
+        |---------|------------|
+        | StructuralPython | Kursi inženieriem |
+        | EngineeringSkills | Pamācības ar kodu |
+        | civils.ai | Python sertifikācija |
 
-        ### Zinātniskie raksti
-        - Gustafsson & McBain (2020) — *scikit-fem* (JOSS)
-        """)
+        <p class="slide-text" style="margin-top:1rem;">
+        <strong>Zinātniskā bāze:</strong><br>
+        Gustafsson & McBain (2020) — <em>scikit-fem</em>, JOSS
+        </p>
+        """, unsafe_allow_html=True)

@@ -2,151 +2,136 @@ import streamlit as st
 
 
 def apply_theme():
-    """Apply custom CSS theme for the LBPA 2026 presentation."""
-    st.markdown(
-        """
-        <style>
-        /* ── Hide Streamlit chrome ── */
-        #MainMenu {visibility: hidden;}
-        header {visibility: hidden;}
-        footer {visibility: hidden;}
+    """Inject custom CSS for light presentation theme matching kforma.lv."""
+    st.markdown("""
+    <style>
+    /* Hide Streamlit chrome for presentation */
+    #MainMenu {visibility: hidden;}
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
 
-        /* ── Core colours ── */
-        :root {
-            --lbpa-dark: #32373c;
-            --kforma-cyan: #00BCD4;
-            --bg-primary: #1a1f2e;
-            --bg-deep: #151a28;
-            --text-primary: #ffffff;
-            --text-muted: #b0b8c8;
-        }
+    /* Typography */
+    .slide-title {
+        font-size: 2.4rem;
+        font-weight: 300;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+        border-bottom: 3px solid #00BCD4;
+        padding-bottom: 0.5rem;
+        letter-spacing: -0.5px;
+    }
 
-        /* ── Slide container ── */
-        .slide-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 1.5rem 2rem 2rem 2rem;
-        }
+    .slide-subtitle {
+        font-size: 1.2rem;
+        color: #7f8c8d;
+        margin-bottom: 1.5rem;
+        font-weight: 300;
+        font-style: italic;
+    }
 
-        /* ── Typography ── */
-        .slide-title {
-            font-size: 2.6rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.2rem;
-            border-bottom: 3px solid var(--kforma-cyan);
-            padding-bottom: 0.5rem;
-        }
+    .slide-text {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #34495e;
+    }
 
-        .slide-subtitle {
-            font-size: 1.3rem;
-            color: var(--kforma-cyan);
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
+    /* Accent elements */
+    .accent-box {
+        background: #f0fafa;
+        border-left: 4px solid #00BCD4;
+        border-radius: 4px;
+        padding: 1.2rem 1.5rem;
+        color: #2c3e50;
+        margin: 1rem 0;
+        font-size: 1.05rem;
+    }
 
-        .slide-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--text-primary);
-        }
+    .stat-card {
+        background: #ffffff;
+        border: 1px solid #e0e6ed;
+        border-top: 3px solid #00BCD4;
+        border-radius: 6px;
+        padding: 1.2rem 1.5rem;
+        margin: 0.5rem 0;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
 
-        /* ── Accent box ── */
-        .accent-box {
-            background: linear-gradient(135deg, var(--bg-deep), var(--lbpa-dark));
-            border-left: 4px solid var(--kforma-cyan);
-            border-radius: 0 8px 8px 0;
-            padding: 1.2rem 1.5rem;
-            margin: 1rem 0;
-        }
+    .stat-number {
+        font-size: 2.2rem;
+        font-weight: 300;
+        color: #00BCD4;
+    }
 
-        /* ── Stat cards ── */
-        .stat-card {
-            background: linear-gradient(135deg, var(--bg-deep), var(--lbpa-dark));
-            border: 1px solid rgba(0, 188, 212, 0.3);
-            border-radius: 12px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-        .stat-card:hover {
-            transform: translateY(-2px);
-            border-color: var(--kforma-cyan);
-        }
-        .stat-number {
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: var(--kforma-cyan);
-            margin-bottom: 0.2rem;
-        }
-        .stat-label {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
+    .stat-label {
+        font-size: 0.95rem;
+        color: #7f8c8d;
+    }
 
-        /* ── Navigation ── */
-        .nav-container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: var(--bg-deep);
-            border-top: 1px solid rgba(0, 188, 212, 0.2);
-            padding: 0.5rem 2rem;
-            z-index: 999;
-        }
+    /* Progress bar */
+    .progress-bar-bg {
+        background: #e8ecf1;
+        border-radius: 3px;
+        height: 4px;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
 
-        /* ── Progress bar ── */
-        .progress-bar-bg {
-            width: 100%;
-            height: 4px;
-            background: var(--lbpa-dark);
-            border-radius: 2px;
-            margin-bottom: 0.4rem;
-        }
-        .progress-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--kforma-cyan), #4dd0e1);
-            border-radius: 2px;
-            transition: width 0.35s ease;
-        }
+    .progress-bar-fill {
+        background: #00BCD4;
+        border-radius: 3px;
+        height: 4px;
+        transition: width 0.3s ease;
+    }
 
-        /* ── Comparison blocks ── */
-        .compare-old {
-            background: rgba(244, 67, 54, 0.12);
-            border-left: 4px solid #f44336;
-            border-radius: 0 8px 8px 0;
-            padding: 1rem 1.2rem;
-            margin: 0.5rem 0;
-        }
-        .compare-new {
-            background: rgba(0, 188, 212, 0.12);
-            border-left: 4px solid var(--kforma-cyan);
-            border-radius: 0 8px 8px 0;
-            padding: 1rem 1.2rem;
-            margin: 0.5rem 0;
-        }
+    /* Code blocks */
+    .stCodeBlock {
+        border: 1px solid #e0e6ed;
+        border-radius: 6px;
+    }
 
-        /* ── Fade-in animation ── */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(12px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .fade-in {
-            animation: fadeIn 0.5s ease-out forwards;
-        }
+    /* Comparison columns */
+    .compare-old {
+        background: #fdf2f2;
+        border-radius: 6px;
+        padding: 1.2rem;
+        border-left: 4px solid #e74c3c;
+    }
 
-        /* ── Code block overrides ── */
-        .stCodeBlock {
-            border: 1px solid rgba(0, 188, 212, 0.25) !important;
-            border-radius: 8px !important;
-        }
+    .compare-new {
+        background: #f0faf0;
+        border-radius: 6px;
+        padding: 1.2rem;
+        border-left: 4px solid #27ae60;
+    }
 
-        /* ── Bottom padding so content doesn't hide behind nav ── */
-        .main .block-container {
-            padding-bottom: 5rem;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
+    /* Fade in animation */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    /* Bottom padding for nav bar */
+    .block-container {
+        padding-bottom: 80px !important;
+        max-width: 1000px;
+    }
+
+    /* Quote style */
+    blockquote {
+        border-left: 3px solid #00BCD4;
+        padding-left: 1rem;
+        color: #5d6d7e;
+        font-style: italic;
+    }
+
+    /* Expander styling */
+    .streamlit-expanderHeader {
+        font-size: 1rem;
+        color: #2c3e50;
+    }
+    </style>
+    """, unsafe_allow_html=True)

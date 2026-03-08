@@ -3,17 +3,19 @@ from components.navigation import slide_header
 
 
 def render():
-    slide_header("Ralph Wiggum Metode",
-                 "Iteratīvā AI cilpa — reverse engineering")
+    slide_header("Ralph Wiggum metode",
+                 "Kad AI strādā naktī, kamēr tu guli")
 
     col1, col2 = st.columns([3, 2])
 
     with col1:
         st.markdown("""
-        ### Kā tas darbojas?
-
-        **Geoffrey Huntley** (2025) izveidoja 5 rindu Bash skriptu:
-        """)
+        <p class="slide-text">
+        2025. gadā izstrādātājs Geoffrey Huntley publicēja 5 rindu Bash skriptu,
+        kas automātiski baro AI ar tā paša ģenerētā koda kļūdām — atkal un atkal,
+        līdz programma sāk darboties.
+        </p>
+        """, unsafe_allow_html=True)
 
         st.code("""
 while true; do
@@ -24,43 +26,38 @@ done
         """, language="bash")
 
         st.markdown("""
-        ### Princips
-        1. AI ģenerē kodu
-        2. Kods tiek izpildīts
-        3. Kļūdas un rezultāti atgriežas AI
-        4. AI labo un uzlabo
-        5. **Atkārto līdz darbojas!**
+        <p class="slide-text">
+        Ar šo pieeju cilvēkiem ir izdevies rekonstruēt komerciālas programmatūras
+        funkcionalitāti. Metode ir nosaukta Ralph Wiggum vārdā —
+        naivais puisītis, kurš vienkārši mēģina un mēģina.
+        </p>
 
-        ### Rezultāts
-        - Komerciālas programmatūras klonēšana
-        - Piemērs: grāmatvedības programma rekonstruēta pilnībā
-        - Claude Code plugin pieejams oficiāli
-        """)
+        <p class="slide-text" style="color:#7f8c8d;">
+        Tas, protams, rada jautājumus par intelektuālo īpašumu un ētiku.
+        Bet tehniski — tas strādā. Un tas maina priekšstatu par to,
+        kas ir iespējams.
+        </p>
+        """, unsafe_allow_html=True)
 
     with col2:
         st.markdown("""
-        <div style="background:#1a1f2e; border:2px solid #00BCD4; border-radius:12px;
-                    padding:2rem; text-align:center;">
-            <p style="font-size:1.2rem; color:#00BCD4; margin-bottom:1rem;">CILPA</p>
-            <div style="background:#32373c; padding:0.8rem; border-radius:8px; margin:0.5rem 0;">
-                <p style="color:#66bb6a; margin:0;">AI ģenerē kodu</p>
+        <div style="background:#f5f7fa; border:1px solid #e0e6ed; border-radius:8px;
+                    padding:1.5rem; text-align:center;">
+            <p style="font-size:1rem; color:#00838F; margin-bottom:1rem;">Iteratīvā cilpa</p>
+            <div style="background:#fff; padding:0.7rem; border-radius:6px; margin:0.4rem 0; border:1px solid #e0e6ed;">
+                <p style="color:#2c3e50; margin:0; font-size:0.9rem;">AI ģenerē kodu</p>
             </div>
-            <p style="color:#fff; margin:0.3rem 0;">&#8595;</p>
-            <div style="background:#32373c; padding:0.8rem; border-radius:8px; margin:0.5rem 0;">
-                <p style="color:#ef5350; margin:0;">Kļūdas / rezultāti</p>
+            <p style="color:#95a5a6; margin:0.2rem 0;">&darr;</p>
+            <div style="background:#fff; padding:0.7rem; border-radius:6px; margin:0.4rem 0; border:1px solid #e0e6ed;">
+                <p style="color:#2c3e50; margin:0; font-size:0.9rem;">Izpilda, kļūdas</p>
             </div>
-            <p style="color:#fff; margin:0.3rem 0;">&#8595;</p>
-            <div style="background:#32373c; padding:0.8rem; border-radius:8px; margin:0.5rem 0;">
-                <p style="color:#ffb74d; margin:0;">Atgriež AI kā kontekstu</p>
+            <p style="color:#95a5a6; margin:0.2rem 0;">&darr;</p>
+            <div style="background:#fff; padding:0.7rem; border-radius:6px; margin:0.4rem 0; border:1px solid #e0e6ed;">
+                <p style="color:#2c3e50; margin:0; font-size:0.9rem;">Kļūdas atpakaļ AI</p>
             </div>
-            <p style="color:#fff; margin:0.3rem 0;">&#8595;</p>
-            <div style="background:#32373c; padding:0.8rem; border-radius:8px; margin:0.5rem 0;">
-                <p style="color:#00BCD4; margin:0;">Atkārto līdz &#10003;</p>
+            <p style="color:#95a5a6; margin:0.2rem 0;">&darr;</p>
+            <div style="background:#f0fafa; padding:0.7rem; border-radius:6px; margin:0.4rem 0; border:1px solid #00BCD4;">
+                <p style="color:#00838F; margin:0; font-size:0.9rem;">Atkārto līdz darbojas</p>
             </div>
         </div>
         """, unsafe_allow_html=True)
-
-    st.markdown("""
-    > *"Kontekstuālais spiediena katls" — katrs cikls pievieno zināšanas
-    > līdz AI saprot visu sistēmu.*
-    """)
