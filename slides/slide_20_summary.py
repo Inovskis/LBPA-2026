@@ -38,7 +38,9 @@ def render():
     with col1:
         st.markdown("""
         <div class="accent-box">
-            <strong>design.kforma.lv</strong> — atvērta platforma būvkonstrukciju aprēķiniem.<br>
+            Ja interesē apskatīt piemēru, par kuru runāju —
+            <strong>design.kforma.lv</strong><br>
+            <span style="color:#7f8c8d;">Nav komercprodukts. Vienkārši eksperiments, ko var apskatīt.</span><br>
             <span style="color:#7f8c8d;">nauris@kforma.lv</span>
         </div>
         """, unsafe_allow_html=True)
@@ -48,6 +50,6 @@ def render():
             qr = qrcode.make("https://design.kforma.lv")
             buf = BytesIO()
             qr.save(buf, format="PNG")
-            st.image(buf.getvalue(), caption="design.kforma.lv", width=160)
+            st.image(buf.getvalue(), caption="piemērs: design.kforma.lv", width=160)
 
     show_image("kforma_logo.png", width=120)

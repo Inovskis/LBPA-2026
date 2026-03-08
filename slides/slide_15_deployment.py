@@ -20,7 +20,7 @@ def render():
             <h4 style="color:#00838F;">Railway</h4>
             <p style="font-size:0.9rem; color:#5d6d7e;">
             Cloud hosting. Auto-deploy no GitHub.
-            design.kforma.lv darbojas šeit.
+            Piemēram, šāds projekts var darboties mākonī par dažiem eiro mēnesī.
             </p>
         </div>
         """, unsafe_allow_html=True)

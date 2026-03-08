@@ -3,12 +3,13 @@ from components.navigation import slide_header
 
 
 def render():
-    slide_header("design.kforma.lv", "Kas tas ir un kas tas nav")
+    slide_header("Piemērs: ko var uzbūvēt viens cilvēks", "Nav par platformu — par iespēju")
 
     st.markdown("""
     <p class="slide-text">
-    Tā ir web platforma būvkonstrukciju aprēķiniem, kuru es izveidoju savām vajadzībām.
-    Tā nav komerciāla programmatūra un nav domāta kā aizstājējs esošajiem rīkiem.
+    Lai ilustrētu šo paradigmas maiņu — es vairāku gadu garumā izveidoju web bāzētu
+    aprēķinu rīku kopu būvkonstrukcijām. Tas nav komercprodukts un nav paredzēts
+    tirgum — tas ir eksperiments, kas parāda, ko šodien var izdarīt viens inženieris.
     </p>
     """, unsafe_allow_html=True)
 
@@ -26,13 +27,13 @@ def render():
 
     st.markdown("""
     <p class="slide-text">
-    Platformā ir Eirokodeksu aprēķini ar Latvijas nacionālajiem pielikumiem —
+    Tajā ir Eirokodeksu aprēķini ar Latvijas nacionālajiem pielikumiem —
     EN 1992, EN 1993, EN 1995, EN 1997, EN 1991. Katra formula ir izsekojama.
-    Nekas nav paslēpts.
     </p>
 
     <p class="slide-text" style="color:#7f8c8d;">
-    Tas, ka viens cilvēks var izveidot šādu platformu, nav sasniegums —
-    tas ir laikmeta raksturojums.
+    Šis ir nepilnīgs, nepārtraukti mainīgs eksperiments — nevis gatavs produkts.
+    Būtiskais nav pati platforma, bet gan tas, ka šāda apjoma lieta
+    vispār ir iespējama bez komandas un budžeta. Tas ir laikmeta raksturojums.
     </p>
     """, unsafe_allow_html=True)

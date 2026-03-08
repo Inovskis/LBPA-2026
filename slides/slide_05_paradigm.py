@@ -23,7 +23,7 @@ def render():
 
     st.markdown("""
     <div class="accent-box">
-        <strong>design.kforma.lv</strong> — 31 aprēķinu modulis, ~148,000 koda rindas.
+        Piemēram, es uzbūvēju aprēķinu rīku kopu — 31 modulis, ~148,000 koda rindas.
         Nav komanda. Nav budžets. Vienkārši inženieris, kurš mēģina lietas darīt citādi.
     </div>
     """, unsafe_allow_html=True)

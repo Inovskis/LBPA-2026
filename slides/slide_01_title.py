@@ -8,13 +8,13 @@ def render():
     st.markdown("""
     <div style="text-align:center; margin-top:4rem;" class="fade-in">
         <h1 style="font-size:2.8rem; font-weight:300; color:#2c3e50; margin-bottom:0.5rem;">
-            AI un Python
+            Mākslīgo neironu tīklu lietošana
         </h1>
         <h1 style="font-size:2.8rem; font-weight:300; color:#00838F; margin-bottom:2rem;">
             Būvkonstrukciju Projektēšanā
         </h1>
         <p style="font-size:1.1rem; color:#7f8c8d; font-weight:300;">
-            Personīgā pieredze un novērojumi
+            Personīgā pieredze, eksperimenti un novērojumi
         </p>
         <p style="font-size:1rem; color:#95a5a6; margin-top:2rem;">
             Nauris &middot; KFORMA SIA

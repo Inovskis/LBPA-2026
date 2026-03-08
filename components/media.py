@@ -60,7 +60,7 @@ def logo_header():
                         LBPA 2026
                     </span><br>
                     <span style="font-size:0.95rem; color:#b0b8c8;">
-                        AI un Python Būvkonstrukciju Projektēšanā
+                        Neironu tīkli būvkonstrukciju projektēšanā
                     </span>
                 </div>
             </div>
