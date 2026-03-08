@@ -27,7 +27,7 @@ def apply_theme():
     .block-container {
         padding-top: 1.5rem !important;
         padding-bottom: 80px !important;
-        max-width: 1100px;
+        max-width: 1400px;
     }
 
     /* ===== Typography ===== */
