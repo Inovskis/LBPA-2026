@@ -1,4 +1,4 @@
-def get_slide(number):
+def get_slide(number: int):
     """Return the render function for the given slide number (1-20)."""
     if number == 1:
         from slides.slide_01_title import render
