@@ -60,7 +60,7 @@ def logo_header():
                         LBPA 2026
                     </span><br>
                     <span style="font-size:0.95rem; color:#b0b8c8;">
-                        Neironu tīkli būvkonstrukciju projektēšanā
+                        AI / LLM
                     </span>
                 </div>
             </div>

@@ -60,3 +60,10 @@ Interaktīva Streamlit prezentācija LBPA (Latvijas Būvinženieru Projektēšan
 
 ## Formāts
 **Streamlit app** - interaktīva prezentācija ar live demo iespējām
+
+## Streamlit Cloud ierobežojumi
+
+- **Inline SVG nestrādā** — `st.markdown("<svg>...</svg>", unsafe_allow_html=True)` tiek nogriezts. Streamlit Cloud strip SVG tagus no unsafe_allow_html. Vizuālas diagrammas jāveido ar HTML/CSS (div, flexbox, border, border-radius) vai ar `st.image()` (base64/fails).
+- **design.kforma.lv** ir tikai piemērs, ne produkts — visur jāformulē kā ilustrācija.
+- **Uzņēmuma nosaukums:** K FORMA (ar atstarpi), ne KFORMA.
+- **Hosting:** Streamlit Community Cloud, repo Inovskis/LBPA-2026 (public), push uz `main` UN `master`.
