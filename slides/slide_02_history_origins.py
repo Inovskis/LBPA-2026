@@ -79,59 +79,50 @@ def render():
     </div>
     """, unsafe_allow_html=True)
 
-    # ── Perceptron diagram — full width ────────────────────────────
+    # ── Perceptron diagram — HTML/CSS (no SVG — Streamlit Cloud strips it)
     st.markdown("""
     <div style="background:#f5f7fa; border-radius:8px; padding:1.2rem; margin-top:1rem;">
         <div style="font-size:0.8rem; font-weight:600; color:#7f8c8d; text-transform:uppercase;
-                    letter-spacing:1px; margin-bottom:0.6rem; text-align:center;">
+                    letter-spacing:1px; margin-bottom:0.8rem; text-align:center;">
             Perceptrons — vienkāršākais neironu tīkla elements
         </div>
-        <svg viewBox="0 0 800 160" width="100%" height="130"
-             xmlns="http://www.w3.org/2000/svg" style="display:block; margin:0 auto;">
-
-            <!-- input nodes -->
-            <circle cx="80" cy="30"  r="22" fill="#e0f7fa" stroke="#00BCD4" stroke-width="2"/>
-            <text x="80"  y="35"  text-anchor="middle" font-size="14" fill="#2c3e50" font-weight="600">x₁</text>
-            <circle cx="80" cy="80"  r="22" fill="#e0f7fa" stroke="#00BCD4" stroke-width="2"/>
-            <text x="80"  y="85"  text-anchor="middle" font-size="14" fill="#2c3e50" font-weight="600">x₂</text>
-            <circle cx="80" cy="130" r="22" fill="#e0f7fa" stroke="#00BCD4" stroke-width="2"/>
-            <text x="80"  y="135" text-anchor="middle" font-size="14" fill="#2c3e50" font-weight="600">x₃</text>
-
-            <!-- weight lines -->
-            <line x1="102" y1="30"  x2="278" y2="72" stroke="#00BCD4" stroke-width="2" opacity="0.5"/>
-            <text x="185" y="42" font-size="12" fill="#00838F" font-weight="600">w₁</text>
-            <line x1="102" y1="80"  x2="278" y2="80" stroke="#00BCD4" stroke-width="2" opacity="0.5"/>
-            <text x="185" y="73" font-size="12" fill="#00838F" font-weight="600">w₂</text>
-            <line x1="102" y1="130" x2="278" y2="88" stroke="#00BCD4" stroke-width="2" opacity="0.5"/>
-            <text x="185" y="120" font-size="12" fill="#00838F" font-weight="600">w₃</text>
-
-            <!-- sum node -->
-            <circle cx="300" cy="80" r="28" fill="#00BCD4" stroke="#00838F" stroke-width="2"/>
-            <text x="300" y="86" text-anchor="middle" font-size="16" fill="#fff" font-weight="700">Σ</text>
-
-            <!-- arrow -->
-            <line x1="328" y1="80" x2="418" y2="80" stroke="#2c3e50" stroke-width="2"
-                  marker-end="url(#arr2)"/>
-            <defs><marker id="arr2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
-                <path d="M0,0 L8,4 L0,8" fill="#2c3e50"/></marker></defs>
-
-            <!-- activation -->
-            <rect x="420" y="54" width="100" height="52" rx="6" fill="#f0fafa" stroke="#00BCD4" stroke-width="2"/>
-            <text x="470" y="84" text-anchor="middle" font-size="14" fill="#2c3e50" font-weight="600">f(Σ)</text>
-
-            <!-- arrow to output -->
-            <line x1="520" y1="80" x2="600" y2="80" stroke="#2c3e50" stroke-width="2"
-                  marker-end="url(#arr2)"/>
-
-            <!-- output -->
-            <circle cx="630" cy="80" r="24" fill="#e8f5e9" stroke="#27ae60" stroke-width="2"/>
-            <text x="630" y="86" text-anchor="middle" font-size="14" fill="#2c3e50" font-weight="600">ŷ</text>
-
-            <!-- labels -->
-            <text x="80"  y="157" text-anchor="middle" font-size="11" fill="#7f8c8d">Ieejas</text>
-            <text x="300" y="118" text-anchor="middle" font-size="11" fill="#7f8c8d">Summa</text>
-            <text x="470" y="118" text-anchor="middle" font-size="11" fill="#7f8c8d">Aktivācija</text>
-            <text x="630" y="114" text-anchor="middle" font-size="11" fill="#7f8c8d">Izeja</text>
-        </svg>
+        <div style="display:flex; align-items:center; justify-content:center; gap:0.4rem; flex-wrap:wrap;">
+            <div style="display:flex; flex-direction:column; gap:0.4rem; align-items:center;">
+                <div style="width:44px; height:44px; border-radius:50%; background:#e0f7fa;
+                            border:2px solid #00BCD4; display:flex; align-items:center; justify-content:center;
+                            font-weight:600; font-size:0.9rem; color:#2c3e50;">x₁</div>
+                <div style="width:44px; height:44px; border-radius:50%; background:#e0f7fa;
+                            border:2px solid #00BCD4; display:flex; align-items:center; justify-content:center;
+                            font-weight:600; font-size:0.9rem; color:#2c3e50;">x₂</div>
+                <div style="width:44px; height:44px; border-radius:50%; background:#e0f7fa;
+                            border:2px solid #00BCD4; display:flex; align-items:center; justify-content:center;
+                            font-weight:600; font-size:0.9rem; color:#2c3e50;">x₃</div>
+                <div style="font-size:0.75rem; color:#7f8c8d;">Ieejas</div>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center; color:#00838F;
+                        font-size:0.85rem; font-weight:600; gap:0.3rem; padding:0 0.3rem;">
+                <span>w₁ →</span><span>w₂ →</span><span>w₃ →</span>
+                <div style="font-size:0.75rem; color:#7f8c8d;">Svari</div>
+            </div>
+            <div style="display:flex; flex-direction:column; align-items:center;">
+                <div style="width:56px; height:56px; border-radius:50%; background:#00BCD4;
+                            border:2px solid #00838F; display:flex; align-items:center; justify-content:center;
+                            font-weight:700; font-size:1.2rem; color:#fff;">Σ</div>
+                <div style="font-size:0.75rem; color:#7f8c8d; margin-top:0.2rem;">Summa</div>
+            </div>
+            <span style="font-size:1.5rem; color:#90a4ae; padding:0 0.3rem;">→</span>
+            <div style="display:flex; flex-direction:column; align-items:center;">
+                <div style="padding:0.6rem 1rem; background:#f0fafa; border:2px solid #00BCD4;
+                            border-radius:6px; font-weight:600; font-size:1rem; color:#2c3e50;">f(Σ)</div>
+                <div style="font-size:0.75rem; color:#7f8c8d; margin-top:0.2rem;">Aktivācija</div>
+            </div>
+            <span style="font-size:1.5rem; color:#90a4ae; padding:0 0.3rem;">→</span>
+            <div style="display:flex; flex-direction:column; align-items:center;">
+                <div style="width:48px; height:48px; border-radius:50%; background:#e8f5e9;
+                            border:2px solid #27ae60; display:flex; align-items:center; justify-content:center;
+                            font-weight:600; font-size:1rem; color:#2c3e50;">ŷ</div>
+                <div style="font-size:0.75rem; color:#7f8c8d; margin-top:0.2rem;">Izeja</div>
+            </div>
+        </div>
     </div>
     """, unsafe_allow_html=True)
