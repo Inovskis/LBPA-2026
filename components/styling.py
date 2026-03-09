@@ -121,9 +121,18 @@ def apply_theme():
         border-radius: 8px !important;
     }
 
-    /* ===== Images — minimal rounding ===== */
+    /* ===== Images — consistent, slightly faded for light theme ===== */
     div[data-testid="stImage"] img {
         border-radius: 2px !important;
+        opacity: 0.88;
+        filter: brightness(1.08);
+        max-height: 320px;
+        object-fit: contain;
+        transition: opacity 0.2s;
+    }
+    div[data-testid="stImage"] img:hover {
+        opacity: 1;
+        filter: brightness(1);
     }
 
     /* ===== Code blocks ===== */
