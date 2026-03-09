@@ -31,7 +31,8 @@ def render():
                 Rosenblatt — Perceptrons</div>
             <div style="font-size:0.92rem; color:#5d6d7e; line-height:1.5;">
                 Pirmais mācīšanās algoritms. Mašīna, kas pati maina svarus,
-                lai atpazītu vienkāršus attēlus.
+                lai atpazītu vienkāršus attēlus. Tolaik šķita — vēl desmit
+                gadi un mēs atrisināsim intelektu.
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -39,13 +40,14 @@ def render():
     with c3:
         st.markdown("""
         <div style="background:#fdf2f2; border-radius:8px; padding:1rem 1.2rem; height:100%;
-                    border-top:4px solid #90a4ae;">
-            <div style="font-size:1.6rem; font-weight:700; color:#90a4ae;">1969</div>
+                    border-top:4px solid #c0392b;">
+            <div style="font-size:1.6rem; font-weight:700; color:#c0392b;">1969</div>
             <div style="font-size:1.05rem; font-weight:600; color:#2c3e50; margin:0.4rem 0 0.3rem;">
                 Minsky & Papert — strupceļš</div>
             <div style="font-size:0.92rem; color:#5d6d7e; line-height:1.5;">
-                Grāmata pierāda: viens slānis nevar atrisināt pat XOR.
-                Finansējums apstājas. Interese par neironu tīkliem apsīkst uz gadiem.
+                Grāmata pierāda: viens neironu slānis nevar atrisināt pat
+                vienkāršu XOR problēmu. Finansējums apstājas, interese apsīkst.
+                Sākas pirmais "aukstais periods" — gandrīz 15 gadu pauze.
             </div>
         </div>
         """, unsafe_allow_html=True)
@@ -59,19 +61,32 @@ def render():
                 Werbos — Backpropagation</div>
             <div style="font-size:0.92rem; color:#5d6d7e; line-height:1.5;">
                 Doktora darbā apraksta kļūdas atpakaļizplatīšanos caur slāņiem.
-                Akadēmiskā pasaule to gandrīz neievēro.
+                Akadēmiskā pasaule to gandrīz neievēro — ideja guļ vēl 12 gadus.
             </div>
         </div>
         """, unsafe_allow_html=True)
 
+    # ── Context box — explain the pattern ─────────────────────────
+    st.markdown("""
+    <div style="background:#fff8e1; border-left:4px solid #f9a825; border-radius:4px;
+                padding:1rem 1.5rem; margin-top:1.5rem;">
+        <div style="font-size:1rem; color:#2c3e50; line-height:1.7;">
+            <strong>Mācība:</strong> AI vēsturē šādi cikli atkārtojās vairākkārt —
+            lielas cerības, pēc tam vilšanās un klusuma periods, tad atkal jauns vilnis.
+            Katru reizi iemesls bija viens: idejas apsteidza sava laika aparatūru.
+            Koncepti bija pareizi — trūka datoru jaudas un datu apjoma, lai tos realizētu.
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
     # ── Perceptron diagram — full width ────────────────────────────
     st.markdown("""
-    <div style="background:#f5f7fa; border-radius:8px; padding:1.2rem; margin-top:1.5rem;">
+    <div style="background:#f5f7fa; border-radius:8px; padding:1.2rem; margin-top:1rem;">
         <div style="font-size:0.8rem; font-weight:600; color:#7f8c8d; text-transform:uppercase;
                     letter-spacing:1px; margin-bottom:0.6rem; text-align:center;">
             Perceptrons — vienkāršākais neironu tīkla elements
         </div>
-        <svg viewBox="0 0 800 160" width="100%" height="140"
+        <svg viewBox="0 0 800 160" width="100%" height="130"
              xmlns="http://www.w3.org/2000/svg" style="display:block; margin:0 auto;">
 
             <!-- input nodes -->
@@ -119,11 +134,4 @@ def render():
             <text x="630" y="114" text-anchor="middle" font-size="11" fill="#7f8c8d">Izeja</text>
         </svg>
     </div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-    <p style="color:#7f8c8d; margin-top:0.8rem; font-size:0.95rem; text-align:center;">
-    Ideja par mākslīgo neironu ir vecāka nekā datori paši. Tik vienkārša shēma —
-    un tomēr no tās izauga viss, ko šodien saucam par neironu tīkliem.
-    </p>
     """, unsafe_allow_html=True)
