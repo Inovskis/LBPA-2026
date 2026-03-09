@@ -121,6 +121,11 @@ def apply_theme():
         border-radius: 8px !important;
     }
 
+    /* ===== Images — minimal rounding ===== */
+    div[data-testid="stImage"] img {
+        border-radius: 2px !important;
+    }
+
     /* ===== Code blocks ===== */
     .stCodeBlock {
         border: 1px solid #e0e6ed;

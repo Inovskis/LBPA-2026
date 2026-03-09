@@ -17,7 +17,7 @@ def render():
             Personīgā pieredze, eksperimenti un novērojumi
         </p>
         <p style="font-size:1rem; color:#95a5a6; margin-top:2rem;">
-            Nauris &middot; KFORMA SIA
+            Nauris &middot; K FORMA SIA
         </p>
     </div>
     """, unsafe_allow_html=True)
