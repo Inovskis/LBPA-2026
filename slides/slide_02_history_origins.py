@@ -3,7 +3,7 @@ from components.navigation import slide_header
 
 
 def render():
-    slide_header("Kā tas sākās", "No matemātiskā neirona līdz pirmajai ziemas iemigšanai")
+    slide_header("Kā tas sākās", "No matemātiskā neirona līdz pirmajam strupceļam")
 
     # ── 4-column horizontal timeline ──────────────────────────────
     c1, c2, c3, c4 = st.columns(4)
@@ -42,10 +42,10 @@ def render():
                     border-top:4px solid #90a4ae;">
             <div style="font-size:1.6rem; font-weight:700; color:#90a4ae;">1969</div>
             <div style="font-size:1.05rem; font-weight:600; color:#2c3e50; margin:0.4rem 0 0.3rem;">
-                Minsky & Papert — AI ziema</div>
+                Minsky & Papert — strupceļš</div>
             <div style="font-size:0.92rem; color:#5d6d7e; line-height:1.5;">
                 Grāmata pierāda: viens slānis nevar atrisināt pat XOR.
-                Finansējums apstājas. Pirmā <em>AI ziema</em>.
+                Finansējums apstājas. Interese par neironu tīkliem apsīkst uz gadiem.
             </div>
         </div>
         """, unsafe_allow_html=True)
