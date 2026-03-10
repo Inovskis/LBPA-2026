@@ -1,18 +1,26 @@
 import streamlit as st
 from components.navigation import slide_header
+from components.media import show_image
 
 
 def render():
     slide_header("Prognozes un determinisms",
                  "Kāpēc AI nedrīkst rēķināt konstrukcijas")
 
-    st.markdown("""
-    <p class="slide-text">
-    AI valodas modeļi ir statistiskas prognozes mašīnas. Tie ģenerē tekstu
-    un kodu, balstoties uz varbūtībām — nevis uz fiziku vai standartiem.
-    Tie var kļūdīties. Un tie kļūdīsies.
-    </p>
-    """, unsafe_allow_html=True)
+    col_img, col_txt = st.columns([1.2, 1])
+
+    with col_img:
+        show_image("determinism_vs_prediction.png",
+                   caption="Precīzs rasējums vs statistiska prognoze", width=500)
+
+    with col_txt:
+        st.markdown("""
+        <p class="slide-text">
+        AI valodas modeļi ir statistiskas prognozes mašīnas. Tie ģenerē tekstu
+        un kodu, balstoties uz varbūtībām — nevis uz fiziku vai standartiem.
+        Tie var kļūdīties. Un tie kļūdīsies.
+        </p>
+        """, unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
 
