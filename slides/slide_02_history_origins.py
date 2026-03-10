@@ -11,7 +11,7 @@ def render():
     with tab1:
         col_img, col_txt = st.columns([1, 1.5])
         with col_img:
-            show_image("mcculloch_pitts.png", caption="Warren McCulloch un Walter Pitts")
+            show_image("mcculloch_pitts.png", caption="Warren McCulloch un Walter Pitts", width=350)
         with col_txt:
             st.markdown("""
             <div style="padding:0.5rem 0;">
@@ -30,9 +30,9 @@ def render():
             """, unsafe_allow_html=True)
 
     with tab2:
-        col_img, col_txt = st.columns([1.5, 1])
+        col_img, col_txt = st.columns([1, 1.5])
         with col_img:
-            show_image("rosenblatt.jpg", caption="Frank Rosenblatt pie Mark I Perceptron mašīnas")
+            show_image("rosenblatt.jpg", caption="Frank Rosenblatt pie Mark I Perceptron mašīnas", width=350)
         with col_txt:
             st.markdown("""
             <div style="padding:0.5rem 0;">
@@ -51,32 +51,29 @@ def render():
             """, unsafe_allow_html=True)
 
     with tab3:
-        col_img, col_mid, col_right = st.columns([1, 1, 1])
+        col_img, col_txt = st.columns([1, 1.5])
         with col_img:
-            show_image("minsky_papert.jpg", caption="Marvin Minsky un Seymour Papert")
-        with col_mid:
-            show_image("perceptron_xor.png", caption="Perceptrons can't do XOR")
-        with col_right:
-            show_image("ai_winter.png", caption="AI Winter 1969–1990")
-
-        st.markdown("""
-        <div style="background:#fdf2f2; border-left:4px solid #c0392b; border-radius:4px;
-                    padding:1rem 1.5rem; margin-top:0.8rem;">
-            <div style="font-size:1.3rem; font-weight:700; color:#c0392b; margin-bottom:0.3rem;">
-                1969 — Strupceļš</div>
-            <div style="font-size:1.05rem; color:#5d6d7e; line-height:1.7;">
-                Minsky un Papert publicē grāmatu "Perceptrons", kurā matemātiski pierāda:
-                viens neironu slānis nevar atrisināt pat vienkāršu XOR problēmu.
-                Finansējums apstājas, interese apsīkst. Sākas gandrīz 15 gadu klusuma periods —
-                idejas bija pareizas, bet aparatūra nebija gatava.
+            show_image("minsky_papert.jpg", caption="Marvin Minsky un Seymour Papert", width=350)
+        with col_txt:
+            st.markdown("""
+            <div style="padding:0.5rem 0;">
+                <div style="font-size:1.8rem; font-weight:700; color:#c0392b;">1969</div>
+                <div style="font-size:1.3rem; font-weight:600; color:#2c3e50; margin:0.5rem 0;">
+                    Strupceļš — AI ziema</div>
+                <div style="font-size:1.05rem; color:#5d6d7e; line-height:1.7;">
+                    Minsky un Papert publicē grāmatu "Perceptrons", kurā matemātiski pierāda:
+                    viens neironu slānis nevar atrisināt pat vienkāršu XOR problēmu.
+                    <br><br>
+                    Finansējums apstājas, interese apsīkst. Sākas gandrīz 15 gadu klusuma periods —
+                    idejas bija pareizas, bet aparatūra nebija gatava.
+                </div>
             </div>
-        </div>
-        """, unsafe_allow_html=True)
+            """, unsafe_allow_html=True)
 
     with tab4:
         col_img, col_txt = st.columns([1, 1.5])
         with col_img:
-            show_image("neural_network.png", caption="Daudzslāņu neironu tīkls: Input → Hidden → Output")
+            show_image("neural_network.png", caption="Daudzslāņu neironu tīkls: Input → Hidden → Output", width=350)
         with col_txt:
             st.markdown("""
             <div style="padding:0.5rem 0;">
@@ -101,3 +98,48 @@ def render():
                 idejas apsteidza sava laika aparatūru.
             </div>
             """, unsafe_allow_html=True)
+
+    # Auto-cycle tabs every 10 seconds
+    st.markdown("""
+    <script>
+    (function() {
+        let tabIdx = 0;
+        const totalTabs = 4;
+        const interval = 10000;
+        let timer = null;
+
+        function cycleTab() {
+            tabIdx = (tabIdx + 1) % totalTabs;
+            const doc = parent.document || document;
+            const tabList = doc.querySelector('[role="tablist"]');
+            if (tabList) {
+                const tabs = tabList.querySelectorAll('[role="tab"]');
+                if (tabs[tabIdx]) {
+                    tabs[tabIdx].click();
+                }
+            }
+        }
+
+        // Start auto-cycling
+        timer = setInterval(cycleTab, interval);
+
+        // Pause auto-cycling for 30s when user manually clicks a tab
+        const doc = parent.document || document;
+        const tabList = doc.querySelector('[role="tablist"]');
+        if (tabList) {
+            tabList.addEventListener('click', function(e) {
+                if (e.target.closest('[role="tab"]')) {
+                    clearInterval(timer);
+                    const tabs = tabList.querySelectorAll('[role="tab"]');
+                    tabs.forEach(function(t, i) {
+                        if (t === e.target || t.contains(e.target) || e.target.contains(t)) tabIdx = i;
+                    });
+                    setTimeout(function() {
+                        timer = setInterval(cycleTab, interval);
+                    }, 30000);
+                }
+            });
+        }
+    })();
+    </script>
+    """, unsafe_allow_html=True)

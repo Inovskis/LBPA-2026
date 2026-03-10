@@ -14,7 +14,7 @@ def render():
             un būvkonstrukciju projektēšana
         </h1>
         <p style="font-size:1.1rem; color:#7f8c8d; font-weight:300;">
-            Personīga pieredze diskusijas aizsākšanai
+            Personīga pieredze
         </p>
         <p style="font-size:1rem; color:#95a5a6; margin-top:2rem;">
             Nauris &middot; K FORMA SIA

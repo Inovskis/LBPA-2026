@@ -179,5 +179,13 @@ def apply_theme():
         font-size: 1rem;
         color: #2c3e50;
     }
+
+    /* ===== Bigger, more clickable tabs ===== */
+    button[role="tab"] {
+        font-size: 1.15rem !important;
+        padding: 0.7rem 1.8rem !important;
+        min-height: 48px !important;
+        font-weight: 500 !important;
+    }
     </style>
     """, unsafe_allow_html=True)
