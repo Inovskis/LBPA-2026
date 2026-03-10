@@ -37,5 +37,10 @@ def render():
             Vai LBPA varētu būt vieta, kur sākt šo sarunu?
             Nevis obligāts kurss — bet seminārs, eksperiments, iespēja.
             </p>
+            <p class="slide-text" style="margin-top:0.8rem;">
+            Ja viens inženieris bez padziļinātām zināšanām programmēšanā var izveidot
+            šādu rīku kopu — iedomājieties, ko varētu paveikt augstskola vai institūts
+            ar pilnu akadēmisko bāzi, doktorantiem un finansējumu.
+            </p>
         </div>
         """, unsafe_allow_html=True)

@@ -40,7 +40,9 @@ def render():
 
     st.markdown("""
     <p class="slide-text" style="color:#7f8c8d;">
-    Šī nav panaceja un nav komercprodukts. Tas ir eksperiments — kas notiek,
-    ja inženieris izmanto šodienas rīkus pilnā apjomā.
+    Es neesmu šajā jomā nekāds guru — un tieši tāpēc šis piemērs ir zīmīgs.
+    Tā nav programmētāja vai matemātiķa darba augļi. Tā ir AI revolūcija komplektā
+    ar ērti lietojamu servisu attīstību — lietas, kas ir savstarpēji saistītas
+    un kas kopā maina to, ko viens cilvēks spēj paveikt.
     </p>
     """, unsafe_allow_html=True)

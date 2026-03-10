@@ -38,7 +38,9 @@ def render():
     st.markdown("""
     <p class="slide-text" style="color:#7f8c8d;">
     Šis ir nepilnīgs, nepārtraukti mainīgs eksperiments — nevis gatavs produkts.
-    Būtiskais nav pati platforma, bet gan tas, ka šāda apjoma lieta
-    vispār ir iespējama bez komandas un budžeta.
+    Ja kāds bez padziļinātām programmēšanas un matemātikas zināšanām
+    var nonākt līdz šādam rezultātam — iedomājieties, ko var paveikt
+    cilvēks ar šīm zināšanām. Iespējams, kāds no klātesošajiem
+    ar šādām lietām jau nodarbojas daudz nopietnākā līmenī.
     </p>
     """, unsafe_allow_html=True)
