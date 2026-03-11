@@ -20,6 +20,13 @@ def render():
         Mūsu darbs ir salikt kopā.
         </p>
 
+        <p class="slide-text">
+        Un vēl viens aspekts, kas kļūst arvien svarīgāks: Python pamatā tiek rakstīts
+        kā teksts — lasāms visā garumā, bez slēptiem slāņiem. Protams, kods var būt garš,
+        bet AI to var izlasīt brīvi. Tas padara Python par ideālu valodu darbam
+        kopā ar lielajiem valodu modeļiem.
+        </p>
+
         <p class="slide-text" style="color:#7f8c8d;">
         Nav licences maksu. Nav vendor lock-in. Kods ir tavs.
         </p>

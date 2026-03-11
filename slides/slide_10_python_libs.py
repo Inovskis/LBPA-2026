@@ -30,7 +30,14 @@ def render():
             st.code(code, language="python")
 
     st.markdown("""
-    <p class="slide-text" style="color:#7f8c8d; margin-top:1rem;">
+    <p class="slide-text" style="margin-top:1rem;">
+    Ja šo sasaista ar LLM iespējām — tas automātiski negarantē uzticamu rezultātu,
+    bet dod vismaz <strong>uzticamākus izejas datus</strong>. Bibliotēku izstrādē ir
+    iesaistījušās tādas organizācijas kā <strong>FIB</strong> (fédération internationale du béton).
+    Tendences ir acīmredzamas — un būtu muļķīgi tās ignorēt.
+    </p>
+
+    <p class="slide-text" style="color:#7f8c8d;">
     Visas ir bezmaksas. Visas ir atvērtā pirmkoda. Formulas var pārbaudīt.
     </p>
     """, unsafe_allow_html=True)
