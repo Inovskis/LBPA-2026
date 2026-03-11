@@ -9,9 +9,9 @@ def get_slide(number: int):
     elif number == 4:
         from slides.slide_04_history_llm import render
     elif number == 5:
-        from slides.slide_05_paradigm import render
-    elif number == 6:
         from slides.slide_06_problem import render
+    elif number == 6:
+        from slides.slide_05_paradigm import render
     elif number == 7:
         from slides.slide_07_example import render
     elif number == 8:
