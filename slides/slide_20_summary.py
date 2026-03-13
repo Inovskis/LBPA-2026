@@ -27,6 +27,13 @@ def render():
     </p>
 
     <p class="slide-text">
+    Inženieru vidē nereti ierasts klusēt un visu pieturēt pie sevis, uztverot citus
+    par konkurentiem. Bet globālā mērogā mēs esam mazi un visi vienā laivā.
+    Augt varam tikai kopā. Zināšanas ir lieta, ar kurām daloties tam, kas to dara,
+    mazāk nepaliek.
+    </p>
+
+    <p class="slide-text">
     Ja kaut kas no šodienas stāstītā licis aizdomāties — tas ir pietiekami.
     </p>
     """, unsafe_allow_html=True)
