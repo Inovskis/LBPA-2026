@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit.components.v1 import html as st_html
 from components.navigation import slide_header
 from components.media import show_image
 
@@ -99,8 +100,8 @@ def render():
             </div>
             """, unsafe_allow_html=True)
 
-    # Auto-cycle tabs every 10 seconds
-    st.markdown("""
+    # Auto-cycle tabs every 10 seconds (st.components.v1.html — st.markdown strips <script>)
+    st_html("""
     <script>
     (function() {
         let tabIdx = 0;
@@ -142,4 +143,4 @@ def render():
         }
     })();
     </script>
-    """, unsafe_allow_html=True)
+    """, height=0)

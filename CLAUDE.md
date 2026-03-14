@@ -63,7 +63,15 @@ Interaktīva Streamlit prezentācija LBPA (Latvijas Būvinženieru Projektēšan
 
 ## Streamlit Cloud ierobežojumi
 
-- **Inline SVG nestrādā** — `st.markdown("<svg>...</svg>", unsafe_allow_html=True)` tiek nogriezts. Streamlit Cloud strip SVG tagus no unsafe_allow_html. Vizuālas diagrammas jāveido ar HTML/CSS (div, flexbox, border, border-radius) vai ar `st.image()` (base64/fails).
+- **Inline SVG nestrādā** — `st.markdown("<svg>...</svg>", unsafe_allow_html=True)` nogriezina SVG tagus. Vizuālas diagrammas jāveido ar HTML/CSS (div, flexbox, border, border-radius) vai ar `st.image()` (base64/fails).
+- **`<script>` tagi nestrādā caur `st.markdown`** — Streamlit strip visus `<script>` tagus no `unsafe_allow_html=True`. JavaScript jāinjectē caur `st.components.v1.html(html_string, height=0)` (iframe-based, `parent.document` pieejams). NEKAD nelieto `st.markdown` JavaScript kodam.
 - **design.kforma.lv** ir tikai piemērs, ne produkts — visur jāformulē kā ilustrācija.
 - **Uzņēmuma nosaukums:** K FORMA (ar atstarpi), ne KFORMA.
-- **Hosting:** Streamlit Community Cloud, repo Inovskis/LBPA-2026 (public), push uz `main` UN `master`.
+
+## Deployment
+
+- **Repo:** github.com/Inovskis/LBPA-2026 (public)
+- **GitHub default branch:** `main`
+- **Streamlit Cloud skatās uz:** `main` branch
+- **Push komanda:** `git push origin main` (pietiek ar `main`, `master` nav obligāts)
+- **Ja izmaiņas neparādās:** Streamlit Cloud dashboardā "Reboot app", tad `Ctrl+Shift+R` pārlūkā

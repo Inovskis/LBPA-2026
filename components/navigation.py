@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit.components.v1 import html as st_html
 
 TOTAL_SLIDES = 20
 
@@ -51,8 +52,11 @@ def slide_header(title, subtitle=None):
 
 
 def inject_keyboard_nav():
-    """Inject JS for keyboard nav + click-anywhere-to-advance."""
-    st.markdown("""
+    """Inject JS for keyboard nav + click-anywhere-to-advance.
+
+    Uses st.components.v1.html (iframe) because st.markdown strips <script>.
+    """
+    st_html("""
     <script>
     (function() {
         var pd = parent.document;
@@ -85,4 +89,4 @@ def inject_keyboard_nav():
         });
     })();
     </script>
-    """, unsafe_allow_html=True)
+    """, height=0)
