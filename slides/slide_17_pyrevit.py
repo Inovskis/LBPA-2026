@@ -26,9 +26,11 @@ def render():
             <li>Stiegrojuma marķēšana</li>
         </ul>
 
-        <p class="slide-text" style="color:#7f8c8d;">
-        Barjera ir daudz zemāka nekā tradicionālajiem C# add-in.
-        Pietiek ar teksta redaktoru un pamata Python zināšanām.
+        <p class="slide-text">
+        Ikdienā nenormāli daudz laika aizņem BIM parametru kārtošana, palīgelementu
+        modelēšana, marķēšana — bet maz laika paliek būtiskajam. Šeit apskatītie
+        aprēķinu piemēri to tieši nerisina, bet līdzīgi var automatizēt arī šādus
+        uzdevumus. PyRevit ir viens no vienkāršāk realizējamiem variantiem.
         </p>
         """, unsafe_allow_html=True)
 
