@@ -72,6 +72,6 @@ Interaktīva Streamlit prezentācija LBPA (Latvijas Būvinženieru Projektēšan
 
 - **Repo:** github.com/Inovskis/LBPA-2026 (public)
 - **GitHub default branch:** `main`
-- **Streamlit Cloud skatās uz:** `main` branch
-- **Push komanda:** `git push origin main` (pietiek ar `main`, `master` nav obligāts)
+- **Streamlit Cloud skatās uz:** `master` branch (NE main!)
+- **Push komanda:** `git push origin main && git push origin main:master` (VIENMĒR abi!)
 - **Ja izmaiņas neparādās:** Streamlit Cloud dashboardā "Reboot app", tad `Ctrl+Shift+R` pārlūkā
