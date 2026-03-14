@@ -50,6 +50,9 @@ def render():
     <div class="accent-box">
         Pieeja, ko es lietoju: <strong>AI raksta kodu</strong>, bet formulas nāk no
         <strong>validētām bibliotēkām</strong>. Rezultāts ir determinēts.
-        Inženieris pārbauda.
+        Bet arī determinētu rezultātu inženierim ir jāspēj <strong>sajust</strong> —
+        aptuveni zināt, kādam tam jābūt. To var tikai ar praktisku bāzi, kas krājas
+        no objekta uz objektu. Trīs cipari aiz komata nedod neko, ja nav intuīcijas
+        par lielumu kārtu.
     </div>
     """, unsafe_allow_html=True)
