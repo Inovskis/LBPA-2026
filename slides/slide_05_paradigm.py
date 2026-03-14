@@ -33,16 +33,9 @@ def render():
 
     st.markdown("""
     <div class="accent-box">
-        Piemēram, es uzbūvēju aprēķinu rīku kopu — 31 modulis, ~148,000 koda rindas.
-        Nav komanda. Nav budžets. Vienkārši inženieris, kurš mēģina lietas darīt citādi.
+        Es uzbūvēju aprēķinu rīku kopu — 31 modulis, ~148,000 koda rindas.
+        Nav komanda, nav budžets. Es neesmu nekāds guru — un tieši tāpēc šis piemērs
+        ir zīmīgs. Tā ir AI revolūcija komplektā ar servisu attīstību — lietas,
+        kas kopā maina to, ko viens cilvēks spēj paveikt.
     </div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-    <p class="slide-text" style="color:#7f8c8d;">
-    Es neesmu šajā jomā nekāds guru — un tieši tāpēc šis piemērs ir zīmīgs.
-    Tā nav programmētāja vai matemātiķa darba augļi. Tā ir AI revolūcija komplektā
-    ar ērti lietojamu servisu attīstību — lietas, kas ir savstarpēji saistītas
-    un kas kopā maina to, ko viens cilvēks spēj paveikt.
-    </p>
     """, unsafe_allow_html=True)

@@ -51,28 +51,38 @@ def slide_header(title, subtitle=None):
 
 
 def inject_keyboard_nav():
-    """Inject JavaScript for arrow key navigation between slides."""
+    """Inject JS for keyboard nav + click-anywhere-to-advance."""
     st.markdown("""
     <script>
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-            const buttons = parent.document.querySelectorAll('button');
-            for (const btn of buttons) {
-                if (btn.textContent.includes('Tālāk')) {
-                    btn.click();
-                    break;
+    (function() {
+        var pd = parent.document;
+
+        // Keyboard navigation
+        pd.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                var btns = pd.querySelectorAll('button');
+                for (var i = 0; i < btns.length; i++) {
+                    if (btns[i].textContent.includes('Tālāk')) { btns[i].click(); break; }
                 }
             }
-        }
-        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-            const buttons = parent.document.querySelectorAll('button');
-            for (const btn of buttons) {
-                if (btn.textContent.includes('Atpakaļ')) {
-                    btn.click();
-                    break;
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                var btns = pd.querySelectorAll('button');
+                for (var i = 0; i < btns.length; i++) {
+                    if (btns[i].textContent.includes('Atpakaļ')) { btns[i].click(); break; }
                 }
             }
-        }
-    });
+        });
+
+        // Click anywhere to advance (skip interactive elements)
+        pd.addEventListener('click', function(e) {
+            if (e.target.closest('button, a, input, select, textarea, [role="tab"], details, summary, [data-testid="stExpander"], .stCodeBlock, video, img')) {
+                return;
+            }
+            var btns = pd.querySelectorAll('button');
+            for (var i = 0; i < btns.length; i++) {
+                if (btns[i].textContent.includes('Tālāk')) { btns[i].click(); break; }
+            }
+        });
+    })();
     </script>
     """, unsafe_allow_html=True)

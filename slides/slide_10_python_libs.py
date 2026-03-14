@@ -37,6 +37,13 @@ def render():
     Tendences ir acīmredzamas — un būtu muļķīgi tās ignorēt.
     </p>
 
+    <p class="slide-text" style="margin-top:0.5rem;">
+    Piemēram, <em>concreteproperties</em> ļauj veikt šķērsgriezuma analīzi tādā detalizācijā,
+    kas ar roku vai Excel būtu nepraktiski sarežģīta. Šādu salīdzināšanu — rezultātu
+    pielīdzināšanu starp metodēm — būtu vērtīgi veikt arī citiem aprēķinu veidiem,
+    piemēram, pāļiem.
+    </p>
+
     <p class="slide-text" style="color:#7f8c8d;">
     Visas ir bezmaksas. Visas ir atvērtā pirmkoda. Formulas var pārbaudīt.
     </p>

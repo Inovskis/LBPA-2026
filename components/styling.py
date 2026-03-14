@@ -23,35 +23,46 @@ def apply_theme():
         padding-top: 1rem !important;
     }
 
-    /* Maximise content area */
+    /* ===== Presentation: every slide fills viewport exactly ===== */
     .block-container {
-        padding-top: 1.5rem !important;
-        padding-bottom: 80px !important;
+        height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+        padding-top: 1rem !important;
+        padding-bottom: 0.5rem !important;
         max-width: 1400px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Slide content fills available space, nav sticks to bottom */
+    .block-container > div[data-testid="stVerticalBlockBorderWrapper"] {
+        flex: 1;
+        min-height: 0;
     }
 
     /* ===== Typography ===== */
     .slide-title {
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         font-weight: 300;
         color: #2c3e50;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
         border-bottom: 3px solid #00BCD4;
-        padding-bottom: 0.5rem;
+        padding-bottom: 0.4rem;
         letter-spacing: -0.5px;
     }
 
     .slide-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         color: #7f8c8d;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         font-weight: 300;
         font-style: italic;
     }
 
     .slide-text {
-        font-size: 1.05rem;
-        line-height: 1.8;
+        font-size: 1.02rem;
+        line-height: 1.65;
         color: #34495e;
     }
 
@@ -60,10 +71,10 @@ def apply_theme():
         background: #f0fafa;
         border-left: 4px solid #00BCD4;
         border-radius: 4px;
-        padding: 1.2rem 1.5rem;
+        padding: 0.8rem 1.2rem;
         color: #2c3e50;
-        margin: 1rem 0;
-        font-size: 1.05rem;
+        margin: 0.5rem 0;
+        font-size: 1.02rem;
     }
 
     .stat-card {
@@ -71,8 +82,8 @@ def apply_theme():
         border: 1px solid #e0e6ed;
         border-top: 3px solid #00BCD4;
         border-radius: 6px;
-        padding: 1.2rem 1.5rem;
-        margin: 0.5rem 0;
+        padding: 0.8rem 1.2rem;
+        margin: 0.3rem 0;
         box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
 
@@ -113,12 +124,12 @@ def apply_theme():
         letter-spacing: 1px;
     }
 
-    /* ===== Navigation buttons — large & touch-friendly ===== */
+    /* ===== Navigation buttons ===== */
     div[data-testid="stHorizontalBlock"] button {
-        font-size: 1.15rem !important;
-        padding: 0.7rem 1.5rem !important;
-        min-height: 52px !important;
-        border-radius: 8px !important;
+        font-size: 1rem !important;
+        padding: 0.4rem 1rem !important;
+        min-height: 40px !important;
+        border-radius: 6px !important;
     }
 
     /* ===== Images — consistent, slightly faded for light theme ===== */

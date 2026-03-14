@@ -48,8 +48,6 @@ def render():
         </div>
         """, unsafe_allow_html=True)
 
-    st.markdown("<div style='height:0.8rem;'></div>", unsafe_allow_html=True)
-
     # ── Growth comparison ──────────────────────────────────────────
     st.markdown("""
     <div style="background:#f5f7fa; border-radius:8px; padding:1rem 1.5rem;">

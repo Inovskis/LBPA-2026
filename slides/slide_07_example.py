@@ -25,8 +25,6 @@ def render():
         st.markdown('<div class="stat-card"><p class="stat-number">1</p><p class="stat-label">izstrādātājs</p></div>', unsafe_allow_html=True)
 
     # ── FIN plate example — analytical vs FEM ──────────────────────
-    st.markdown("<div style='height:0.5rem;'></div>", unsafe_allow_html=True)
-
     col1, col2 = st.columns(2)
     with col1:
         show_image("kforma_fin_analytical.png",
