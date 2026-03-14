@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit.components.v1 import html as st_html
 from components.navigation import slide_header
 from components.media import show_image
 
@@ -100,8 +99,8 @@ def render():
             </div>
             """, unsafe_allow_html=True)
 
-    # Auto-cycle tabs every 10 seconds (st.components.v1.html — st.markdown strips <script>)
-    st_html("""
+    # Auto-cycle tabs every 10 seconds
+    st.html("""
     <script>
     (function() {
         let tabIdx = 0;
@@ -111,7 +110,7 @@ def render():
 
         function cycleTab() {
             tabIdx = (tabIdx + 1) % totalTabs;
-            const doc = parent.document || document;
+            const doc = document;
             const tabList = doc.querySelector('[role="tablist"]');
             if (tabList) {
                 const tabs = tabList.querySelectorAll('[role="tab"]');
@@ -125,7 +124,7 @@ def render():
         timer = setInterval(cycleTab, interval);
 
         // Pause auto-cycling for 30s when user manually clicks a tab
-        const doc = parent.document || document;
+        const doc = document;
         const tabList = doc.querySelector('[role="tablist"]');
         if (tabList) {
             tabList.addEventListener('click', function(e) {
@@ -143,4 +142,4 @@ def render():
         }
     })();
     </script>
-    """, height=0)
+    """, unsafe_allow_javascript=True)

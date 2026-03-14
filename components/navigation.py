@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit.components.v1 import html as st_html
 
 TOTAL_SLIDES = 20
 
@@ -54,23 +53,23 @@ def slide_header(title, subtitle=None):
 def inject_keyboard_nav():
     """Inject JS for keyboard nav + click-anywhere-to-advance.
 
-    Uses st.components.v1.html (iframe) because st.markdown strips <script>.
+    Uses st.html(unsafe_allow_javascript=True) — renders directly in page,
+    no iframe. st.markdown strips <script>, st.components.v1.html uses
+    sandboxed iframe that blocks parent.document access.
     """
-    st_html("""
+    st.html("""
     <script>
     (function() {
-        var pd = parent.document;
-
         // Keyboard navigation
-        pd.addEventListener('keydown', function(e) {
+        document.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-                var btns = pd.querySelectorAll('button');
+                var btns = document.querySelectorAll('button');
                 for (var i = 0; i < btns.length; i++) {
                     if (btns[i].textContent.includes('Tālāk')) { btns[i].click(); break; }
                 }
             }
             if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-                var btns = pd.querySelectorAll('button');
+                var btns = document.querySelectorAll('button');
                 for (var i = 0; i < btns.length; i++) {
                     if (btns[i].textContent.includes('Atpakaļ')) { btns[i].click(); break; }
                 }
@@ -78,15 +77,15 @@ def inject_keyboard_nav():
         });
 
         // Click anywhere to advance (skip interactive elements)
-        pd.addEventListener('click', function(e) {
+        document.addEventListener('click', function(e) {
             if (e.target.closest('button, a, input, select, textarea, [role="tab"], details, summary, [data-testid="stExpander"], .stCodeBlock, video, img')) {
                 return;
             }
-            var btns = pd.querySelectorAll('button');
+            var btns = document.querySelectorAll('button');
             for (var i = 0; i < btns.length; i++) {
                 if (btns[i].textContent.includes('Tālāk')) { btns[i].click(); break; }
             }
         });
     })();
     </script>
-    """, height=0)
+    """, unsafe_allow_javascript=True)

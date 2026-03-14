@@ -64,7 +64,7 @@ Interaktīva Streamlit prezentācija LBPA (Latvijas Būvinženieru Projektēšan
 ## Streamlit Cloud ierobežojumi
 
 - **Inline SVG nestrādā** — `st.markdown("<svg>...</svg>", unsafe_allow_html=True)` nogriezina SVG tagus. Vizuālas diagrammas jāveido ar HTML/CSS (div, flexbox, border, border-radius) vai ar `st.image()` (base64/fails).
-- **`<script>` tagi nestrādā caur `st.markdown`** — Streamlit strip visus `<script>` tagus no `unsafe_allow_html=True`. JavaScript jāinjectē caur `st.components.v1.html(html_string, height=0)` (iframe-based, `parent.document` pieejams). NEKAD nelieto `st.markdown` JavaScript kodam.
+- **`<script>` tagi nestrādā caur `st.markdown`** — Streamlit strip visus `<script>` tagus. JavaScript jāinjectē caur `st.html(html_string, unsafe_allow_javascript=True)` (Streamlit >=1.52.0, renderējas tieši lapā, nav iframe). `st.components.v1.html()` lieto iframe ar sandbox — `parent.document` var būt bloķēts. NEKAD nelieto `st.markdown` JavaScript kodam.
 - **design.kforma.lv** ir tikai piemērs, ne produkts — visur jāformulē kā ilustrācija.
 - **Uzņēmuma nosaukums:** K FORMA (ar atstarpi), ne KFORMA.
 
